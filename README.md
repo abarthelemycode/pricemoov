@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Test Frontend - ReactJS
 
-## Available Scripts
+The purpose is to implement a small app displaying prices to the user.
+The code must be submitted via git, each functionnal milestone being commited to *master*, and the final result being the last commit on *master*.
+Developments must be done in *develop*
 
-In the project directory, you can run:
+## Ressources
 
-### `npm start`
+Mocked data:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* http://5ae97684531a58001414278c.mockapi.io/:endpoint
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Endpoints (CRUD pour chacune des routes):
 
-### `npm test`
+* /agencies
+    * GET: Returns the list of agencies
+* /agencies/:id/categories
+    * GET: Returns the list of products related to the [:id] specific agency
+* /agencies/[:agency_id]/categories/[:product_id]/prices
+    * GET: Given a specific agency [:agency_id] and a product [:product_id], return the list of prices
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A price object is as below:
+{
+  "startDate": number (EPOCH),
+  "price": number,
+  "suggestedPrice": number,
+  "isValidated": true/false,
+}
 
-### `npm run build`
+The mocked data is provided through a third party service which may result in random downtimes.
+If there is too much problems, the candidate may creates its own relevant mocked data.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Description
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+The main elements of the interface are:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* A dropdown to select agencies
+* A dropdown to select products
+* A toggle button: "Show all Y/N" that allowqui permet de voir seulement les prix validés (par défaut), ou tous
+* A price list:
+    * Sorted by ascending startDate (EPOCH)
+    * Filtered on the criteria isValidated
+    * Each line displaying at least the information Chaque ligne affiche: prix: XX, prix suggéré: YY
 
-### `npm run eject`
+## Difficulty
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The main objective is to develop the interface, but the candidate is free to add features and increase the challenge.
+For example:
+* Good practices (Linter Airbnb, Unit Testing, Snapshot Testing, ...)
+* Use of Redux, using ducks (https://github.com/alexnm/re-ducks)
+* Dynamic ordering of the table component
+* Translation using react-18next
+* ...
+ 
