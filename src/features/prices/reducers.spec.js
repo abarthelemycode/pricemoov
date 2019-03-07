@@ -10,7 +10,7 @@ const initialState = {
   categories : [],
   prices : [],
   pricesFilters : [],
-  pricesSort: { type: "startDate", orderby:"ASC"},
+  pricesSort: { type: "startDate", orderby:"asc"},
   error: {}
 }
 

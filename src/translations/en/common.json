@@ -2,8 +2,9 @@
   "agencies": "agencies",
   "categories": "categories",
   "suggestedPrice": "suggested price",
-  "startDate": "Start date",
+  "startDate": "start date",
   "price": "price",
-  "displayPrices": "display only validate prices",
-  "isValid": "is valid"
+  "displayPrices": "display only validated prices",
+  "isValided": "is valided",
+  "changeLanguage": "Change language"
 }

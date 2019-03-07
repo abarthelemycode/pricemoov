@@ -8,7 +8,7 @@ const getPricesSort = (state) => state.pricesState.pricesSort
 
 
 const filterPrices = (prices, filters) => {
-  
+
   if(filters.includes(filtersSelectors.SHOW_PRICES_VALIDATED))
     prices = prices.filter(item => item.isValidated === true)
 
@@ -25,7 +25,7 @@ const sortPrices = (prices, sort) => {
     return (a[type] === b[type] ? 0 : (a[type] < b[type] ? -1 :1));
   })
 
-  if(sort.orderby === "DSC")
+  if(sort.orderby === "desc")
     prices = prices.reverse()
 
   return prices

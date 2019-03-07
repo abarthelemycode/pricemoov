@@ -6,7 +6,7 @@ import { default as mocks } from './mocks'
 
 describe('features/prices/selectors', () => {
   const filters = [ filtersSelectors.SHOW_PRICES_VALIDATED ]
-  const sorting = { type: "startDate", orderby: "ASC"}
+  const sorting = { type: "startDate", orderby: "asc"}
 
   it('filterPrices', () => {
     const selected = selectors.filterPrices(mocks.prices, filters)

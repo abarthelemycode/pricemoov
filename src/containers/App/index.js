@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div className={classes.root}>
         <Grid container justify="center">
-          <Grid item xs={8}>
+          <Grid item xs={6}>
             <Paper className={classes.paper}>
               <PricesList />
             </Paper>

@@ -15,7 +15,7 @@ const mockStore = configureMockStore(middlewares)
 // SYNC ACTIONS
 describe('SYNC feature/prices/actions', () => {
   it('should create an action to sort prices', () => {
-    const order = { type: "startDate", orderby:"ASC"}
+    const order = { type: "startDate", orderby:"asc"}
     const expectedAction = {
       type: types.SORT_PRICES,
       pricesSort : order

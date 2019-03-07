@@ -1,3 +1,11 @@
-$blue: red;
-$black: black;
-$grey: grey;
+$blue: #2086F5;
+$black: #000000;
+$grey: #464646;
+$white: #ffffff;
+
+:export {
+  blue: $blue;
+  black: $black;
+  grey: $grey;
+  white: $white;
+}

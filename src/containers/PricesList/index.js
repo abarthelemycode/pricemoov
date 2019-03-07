@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-
-import { withStyles } from '@material-ui/core/styles'
 import { withTranslation } from 'react-i18next';
 
 import Grid from '@material-ui/core/Grid'
@@ -12,10 +10,6 @@ import { pricesSelectors } from 'features/prices'
 import { pricesFilters } from 'features/prices'
 import { SelectFilter, PricesTable, Toggle } from 'components'
 
-
-const styles = (theme) => ({
-
-})
 
 class PricesList extends Component {
 
@@ -60,16 +54,16 @@ class PricesList extends Component {
 
   render() {
     const { t, i18n } = this.props
-    const { prices, agencies, agencyId, categories, categoryId } = this.props
+    const { prices, agencies, agencyId, categories, categoryId, pricesSort } = this.props
 
     return (
         <Grid>
-          <Toggle align="flex-end" text={"change language " + i18n.language } onChange={(e)=> this.toogleHandlerLanguage(e) }/>
+          <Toggle align="flex-end" text={t('changeLanguage') + " : " + i18n.language } onChange={(e)=> this.toogleHandlerLanguage(e) }/>
           <SelectFilter  name={t('agencies')} items={agencies} value={agencyId}
             onChange={ (e)=> this.selectAgencyHandler(e) } />
           <SelectFilter  name={t('categories')} items={categories} value={categoryId}
             onChange={ (e)=> this.selectCategoryHandler(e) } />
-          <PricesTable sortChange={(e) => this.sortPrices(e)} items={prices}/>
+          <PricesTable sortChange={(e) => this.sortPrices(e)} pricesSort={ pricesSort } items={prices}/>
           <Toggle align="flex-start" text={t('displayPrices')} onChange={(e)=> this.toggleHandler(e) }/>
         </Grid>
     );
@@ -109,6 +103,5 @@ const mapDispatchToProps = (dispatch) => {
 
 export default compose(
   connect(makeMapStateToProps, mapDispatchToProps),
-  withStyles(styles),
   withTranslation('common')
 )(PricesList)
