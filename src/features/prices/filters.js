@@ -1,0 +1,8 @@
+const SHOW_PRICES_VALIDATED = "SHOW_PRICES_VALIDATED"
+// for example
+const SHOW_SUP_50 = "SHOW_SUP_50"
+
+export default {
+  SHOW_PRICES_VALIDATED,
+  SHOW_SUP_50
+}

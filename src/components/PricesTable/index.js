@@ -10,6 +10,33 @@ import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 
+const styles = theme => ({
+  table: {
+    border: 1,
+    borderStyle: 'solid',
+    background: 'grey',
+    height: 10
+  },
+  tablerow: {
+    border: 1,
+    borderStyle: 'solid',
+  },
+  tablecell: {
+    border: 0,
+    padding:0,
+    margin:0,
+    height: 10,
+    'text-align':'center',
+    background: 'white',
+    '&:first-letter': {
+      'text-transform': 'uppercase'
+    }
+  },
+  datecell:{
+    color: 'white',
+    background:'black',
+  },
+})
 
 class PricesTable extends Component {
 
